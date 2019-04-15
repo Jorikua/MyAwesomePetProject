@@ -3,9 +3,9 @@ package com.example.myawesomepetproject.posts.presentation
 import android.util.Log
 import com.arellomobile.mvp.InjectViewState
 import com.arellomobile.mvp.MvpPresenter
-import com.example.myawesomepetproject.base.extensions.plusAssign
-import com.example.myawesomepetproject.di.scope.PerFragment
-import com.example.myawesomepetproject.posts.domain.repository.PostsRepository
+import com.example.base.di.scope.PerFragment
+import com.example.base.extensions.plusAssign
+import com.example.feed.domain.repository.PostsRepository
 import com.example.myawesomepetproject.posts.presentation.mapper.PostViewModelMapper
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable

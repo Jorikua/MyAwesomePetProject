@@ -1,7 +1,7 @@
 package com.example.myawesomepetproject.posts.presentation.adapter
 
 import com.airbnb.epoxy.TypedEpoxyController
-import com.example.myawesomepetproject.di.scope.PerFragment
+import com.example.base.di.scope.PerFragment
 import com.example.myawesomepetproject.posts.presentation.adapter.model.postEpoxyView
 import com.example.myawesomepetproject.posts.presentation.model.PostViewModel
 import javax.inject.Inject
@@ -21,11 +21,11 @@ class PostsController @Inject constructor() : TypedEpoxyController<List<PostView
     postEpoxyView {
       id(postViewModel.id)
       postViewModel(postViewModel)
-      postClick { postsListener?.onPostClick(postViewModel.id) }
+      postClick { postsListener?.onPostClick(postViewModel.id, postViewModel.userId) }
     }
   }
   
   interface PostsListener {
-    fun onPostClick(id: Int)
+    fun onPostClick(id: Int, userId: Int)
   }
 }

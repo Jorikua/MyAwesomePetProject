@@ -1,0 +1,28 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+apply from: '../default-config.gradle'
+apply from: '../build-config.gradle'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation libraryDependencies.kotlinStdlibJdk8
+    implementation libraryDependencies.appcompat
+    implementation libraryDependencies.moxyCore
+    implementation libraryDependencies.moxyAndroid
+    implementation libraryDependencies.epoxy
+
+    implementation libraryDependencies.dagger
+    implementation libraryDependencies.daggerAndroid
+    implementation libraryDependencies.rxJava
+    implementation libraryDependencies.rxAndroid
+    kapt libraryDependencies.daggerCompiler
+
+    implementation libraryDependencies.retrofit
+    implementation libraryDependencies.rxJavaAdapter
+    implementation libraryDependencies.gsonConverter
+    implementation libraryDependencies.loggingInterceptor
+
+    kapt libraryDependencies.moxyKapt
+}

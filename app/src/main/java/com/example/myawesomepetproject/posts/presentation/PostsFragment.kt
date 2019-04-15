@@ -11,12 +11,11 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
+import com.example.base.extensions.inflate
+import com.example.base.extensions.onClick
+import com.example.base.extensions.toast
+import com.example.feed.di.postsFeatureComponent
 import com.example.myawesomepetproject.R
-import com.example.myawesomepetproject.base.InjectableFragment
-import com.example.myawesomepetproject.base.extensions.inflate
-import com.example.myawesomepetproject.base.extensions.onClick
-import com.example.myawesomepetproject.base.extensions.toast
-import com.example.myawesomepetproject.main.MainActivity
 import com.example.myawesomepetproject.posts.di.DaggerPostsComponent
 import com.example.myawesomepetproject.posts.di.PostsComponent
 import com.example.myawesomepetproject.posts.presentation.adapter.PostsController
@@ -25,7 +24,7 @@ import kotlinx.android.synthetic.main.fragment_posts.*
 import kotlinx.android.synthetic.main.layout_something_went_wrong.*
 import javax.inject.Inject
 
-class PostsFragment : InjectableFragment<PostsComponent>(), PostsView {
+class PostsFragment : com.example.base.InjectableFragment<PostsComponent>(), PostsView {
   
   @Inject
   @InjectPresenter
@@ -72,9 +71,9 @@ class PostsFragment : InjectableFragment<PostsComponent>(), PostsView {
   }
   
   private val postsListener = object : PostsController.PostsListener {
-    override fun onPostClick(id: Int) {
+    override fun onPostClick(id: Int, userId: Int) {
       fragmentManager?.transaction {
-//        add(R.id.mainContainer, )
+        //        add(R.id.mainContainer, )
       }
     }
   }
@@ -84,7 +83,7 @@ class PostsFragment : InjectableFragment<PostsComponent>(), PostsView {
   }
   
   override fun onLoadPostsFailure() {
-    when(postsController.currentData == null || postsController.currentData?.isEmpty() == true) {
+    when (postsController.currentData == null || postsController.currentData?.isEmpty() == true) {
       true -> postsSomethingWentWrongPlaceholder.isVisible = true
       false -> toast(R.string.something_went_wrong)
     }
@@ -92,7 +91,7 @@ class PostsFragment : InjectableFragment<PostsComponent>(), PostsView {
   
   override fun initializeComponent(): PostsComponent {
     return DaggerPostsComponent.builder()
-        .mainComponent((activity as MainActivity).component)
+        .postsFeatureComponentApi(postsFeatureComponent)
         .build()
   }
   

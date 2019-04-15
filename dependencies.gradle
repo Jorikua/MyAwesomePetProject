@@ -8,7 +8,7 @@ allprojects {
 ext {
   //Android
   androidBuildToolsVersion = '28.0.3'
-  androidMinSdkVersion = 19
+  androidMinSdkVersion = 21
   androidTargetSdkVersion = 28
   androidCompileSdkVersion = 28
   renderscriptTargetApiVersion = 28
@@ -41,6 +41,8 @@ ext {
   //Timber
   timberVersion = '4.6.1'
 
+  //Gson
+  gsonVersion = '2.8.5'
 
   //Testing
   jUnitVersion = '4.12'
@@ -100,6 +102,7 @@ ext {
        retrofit                 : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
        rxJavaAdapter            : "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}",
        loggingInterceptor       : "com.squareup.okhttp3:logging-interceptor:${loggingInterceptorVersion}",
+       gson                     : "com.google.code.gson:gson:${gsonVersion}",
        gsonConverter            : "com.squareup.retrofit2:converter-gson:${retrofitVersion}"]
 
 

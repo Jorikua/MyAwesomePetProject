@@ -1,0 +1,24 @@
+android {
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+
+  buildTypes {
+    debug {
+      buildConfigField("String", "BASE_URL", '"http://jsonplaceholder.typicode.com/"')
+      buildConfigField("String", "AVATAR", '"https://api.adorable.io/avatars/75/"')
+    }
+    release {
+      buildConfigField("String", "BASE_URL", '"http://jsonplaceholder.typicode.com/"')
+      buildConfigField("String", "AVATAR", '"https://api.adorable.io/avatars/75/"')
+
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+    }
+  }
+
+  testOptions {
+    unitTests.returnDefaultValues = true
+  }
+}

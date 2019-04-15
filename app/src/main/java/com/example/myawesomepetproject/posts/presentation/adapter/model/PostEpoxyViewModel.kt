@@ -4,7 +4,6 @@ import com.airbnb.epoxy.EpoxyAttribute
 import com.airbnb.epoxy.EpoxyModelClass
 import com.airbnb.epoxy.EpoxyModelWithHolder
 import com.example.myawesomepetproject.R
-import com.example.myawesomepetproject.base.epoxy.KotlinHolder
 import com.example.myawesomepetproject.posts.presentation.model.PostViewModel
 import kotlinx.android.synthetic.main.list_item_post.view.*
 
@@ -27,5 +26,5 @@ abstract class PostEpoxyViewModel : EpoxyModelWithHolder<PostEpoxyViewModel.Hold
     }
   }
   
-  class Holder : KotlinHolder()
+  class Holder : com.example.base.epoxy.KotlinHolder()
 }

@@ -1,9 +1,9 @@
 package com.example.myawesomepetproject
 
 import android.app.Application
-import com.example.myawesomepetproject.di.app.AppComponent
-import com.example.myawesomepetproject.di.app.ContextModule
-import com.example.myawesomepetproject.di.app.DaggerAppComponent
+import com.example.base.di.AppComponent
+import com.example.base.di.ContextModule
+import com.example.base.di.DaggerAppComponent
 
 class MyApp : Application() {
   
