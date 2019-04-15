@@ -1,0 +1,75 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+kapt {
+    correctErrorTypes = true
+}
+
+android {
+  compileSdkVersion 28
+  defaultConfig {
+    applicationId "com.example.myawesomepetproject"
+    minSdkVersion 21
+    targetSdkVersion 28
+    versionCode 1
+    versionName "1.0"
+  }
+
+  compileOptions {
+    sourceCompatibility 1.8
+    targetCompatibility 1.8
+  }
+  
+  buildTypes {
+    debug {
+      buildConfigField("String", "BASE_URL", '"http://jsonplaceholder.typicode.com/"')
+    }
+    release {
+      buildConfigField("String", "BASE_URL", '"http://jsonplaceholder.typicode.com/"')
+
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+    }
+  }
+  testOptions {
+    unitTests.returnDefaultValues = true
+  }
+}
+
+dependencies {
+  implementation fileTree(dir: 'libs', include: ['*.jar'])
+  implementation libraryDependencies.kotlinStdlibJdk8
+  implementation libraryDependencies.androidxCore
+  implementation libraryDependencies.appcompat
+  implementation libraryDependencies.recyclerview
+  implementation libraryDependencies.annotations
+  implementation libraryDependencies.ktx
+  implementation libraryDependencies.constraintLayout
+  implementation libraryDependencies.material
+  implementation libraryDependencies.dagger
+  implementation libraryDependencies.daggerAndroid
+  implementation libraryDependencies.rxJava
+  implementation libraryDependencies.rxAndroid
+  kapt libraryDependencies.daggerCompiler
+
+  implementation libraryDependencies.retrofit
+  implementation libraryDependencies.rxJavaAdapter
+  implementation libraryDependencies.gsonConverter
+  implementation libraryDependencies.loggingInterceptor
+
+  implementation libraryDependencies.fragmentKtx
+
+  implementation libraryDependencies.epoxy
+  kapt libraryDependencies.epoxyProcessor
+
+  implementation libraryDependencies.moxyCore
+  implementation libraryDependencies.moxyAndroid
+  kapt libraryDependencies.moxyKapt
+
+  testImplementation testDependencies.jUnit
+  testImplementation testDependencies.mockito
+}
