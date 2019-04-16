@@ -1,9 +1,7 @@
 package com.example.myawesomepetproject.posts.presentation
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.core.view.isGone
 import androidx.core.view.isVisible
 import androidx.fragment.app.transaction
@@ -11,11 +9,12 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
-import com.example.base.extensions.inflate
+import com.example.base.InjectableFragment
 import com.example.base.extensions.onClick
 import com.example.base.extensions.toast
 import com.example.feed.di.postsFeatureComponent
 import com.example.myawesomepetproject.R
+import com.example.myawesomepetproject.details.presentation.DetailsFragment
 import com.example.myawesomepetproject.posts.di.DaggerPostsComponent
 import com.example.myawesomepetproject.posts.di.PostsComponent
 import com.example.myawesomepetproject.posts.presentation.adapter.PostsController
@@ -24,7 +23,8 @@ import kotlinx.android.synthetic.main.fragment_posts.*
 import kotlinx.android.synthetic.main.layout_something_went_wrong.*
 import javax.inject.Inject
 
-class PostsFragment : com.example.base.InjectableFragment<PostsComponent>(), PostsView {
+class PostsFragment : InjectableFragment<PostsComponent>(), PostsView {
+  override val layoutId: Int = R.layout.fragment_posts
   
   @Inject
   @InjectPresenter
@@ -37,10 +37,6 @@ class PostsFragment : com.example.base.InjectableFragment<PostsComponent>(), Pos
   
   @Inject
   lateinit var postsController: PostsController
-  
-  override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-    return container?.inflate(R.layout.fragment_posts)
-  }
   
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     initRv()
@@ -71,9 +67,11 @@ class PostsFragment : com.example.base.InjectableFragment<PostsComponent>(), Pos
   }
   
   private val postsListener = object : PostsController.PostsListener {
-    override fun onPostClick(id: Int, userId: Int) {
+    override fun onPostClick(postViewModel: PostViewModel) {
       fragmentManager?.transaction {
-        //        add(R.id.mainContainer, )
+        addToBackStack(null)
+        setCustomAnimations(R.animator.slide_in_right, android.R.anim.slide_out_right, android.R.anim.slide_out_right, android.R.anim.slide_out_right)
+        add(R.id.mainContainer, DetailsFragment.newInstance(postViewModel), DetailsFragment::class.java.name)
       }
     }
   }

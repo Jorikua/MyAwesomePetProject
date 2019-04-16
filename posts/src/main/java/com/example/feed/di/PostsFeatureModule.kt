@@ -12,7 +12,7 @@ import dagger.Provides
 import retrofit2.Retrofit
 
 @Module
-abstract class PostsDataModule {
+abstract class PostsFeatureModule {
   
   @Binds
   @PerFeature

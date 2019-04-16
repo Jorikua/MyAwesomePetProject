@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		xmlns:tools="http://schemas.android.com/tools"
+		>
+
+	<androidx.appcompat.widget.AppCompatImageView
+			android:id="@+id/itemDetailsHeaderIvAvatar"
+			android:layout_width="@dimen/details_iv_avatar_size"
+			android:layout_height="@dimen/details_iv_avatar_size"
+			android:layout_marginTop="@dimen/margin_20"
+			android:scaleType="centerCrop"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			/>
+
+	<androidx.appcompat.widget.AppCompatTextView
+			android:id="@+id/itemDetailsHeaderTvName"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/margin_16"
+			android:layout_marginEnd="@dimen/margin_16"
+			android:layout_marginStart="@dimen/margin_16"
+			android:ellipsize="end"
+			android:singleLine="true"
+			android:gravity="center"
+			tools:text="Name: Seva"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/itemDetailsHeaderIvAvatar"
+			/>
+
+	<androidx.appcompat.widget.AppCompatTextView
+			android:id="@+id/itemDetailsHeaderTvUsername"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginEnd="@dimen/margin_16"
+			android:layout_marginStart="@dimen/margin_16"
+			android:layout_marginTop="@dimen/margin_16"
+			android:ellipsize="end"
+			android:singleLine="true"
+			android:gravity="center"
+			tools:text="Username: Kaganovych"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/itemDetailsHeaderTvName"
+			/>
+
+	<androidx.appcompat.widget.AppCompatTextView
+			android:id="@+id/itemDetailsHeaderTvWebsite"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginEnd="@dimen/margin_16"
+			android:layout_marginStart="@dimen/margin_16"
+			android:layout_marginTop="@dimen/margin_16"
+			android:ellipsize="end"
+			android:singleLine="true"
+			android:autoLink="web"
+			android:gravity="center"
+			tools:text="Website: aaaaa.com"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/itemDetailsHeaderTvUsername"
+			/>
+
+	<androidx.appcompat.widget.AppCompatTextView
+			android:id="@+id/itemDetailsHeaderTvTitle"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginEnd="@dimen/margin_16"
+			android:layout_marginStart="@dimen/margin_16"
+			android:textSize="@dimen/text_size_20"
+			android:layout_marginTop="@dimen/margin_30"
+			android:gravity="center"
+			android:textColor="@color/black"
+			tools:text="Title"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/itemDetailsHeaderTvWebsite"
+			/>
+
+	<androidx.appcompat.widget.AppCompatTextView
+			android:id="@+id/itemDetailsHeaderTvComments"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginEnd="@dimen/margin_16"
+			android:layout_marginStart="@dimen/margin_16"
+			android:ellipsize="end"
+			tools:text="Comments (43)"
+			android:singleLine="true"
+			android:gravity="center"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/itemDetailsHeaderTvTitle"
+			/>
+
+	<androidx.appcompat.widget.AppCompatTextView
+			android:id="@+id/itemDetailsHeaderTvBody"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginEnd="@dimen/margin_16"
+			android:layout_marginStart="@dimen/margin_16"
+			android:textColor="@color/black"
+			android:layout_marginTop="@dimen/margin_16"
+			tools:text="So perhaps, you've generated some fancy text, and you're content that you can now copy and paste your fancy text in the comments section of funny cat videos, but perhaps you're wondering how it's even possible to change the font of your text? Is it some sort of hack? Are you copying and pasting an actual font?"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/itemDetailsHeaderTvComments"
+			/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

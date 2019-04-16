@@ -49,10 +49,9 @@ ext {
   mockitoVersion = '1.10.19'
 
   //Glide
-  glideVersion = '4.8.0'
-  glideKapt = '4.8.0'
-  glideOkhttpVersion = '4.8.0'
-  glideTransformations = '3.3.0'
+  glideVersion = '4.9.0'
+  glideKapt = '4.9.0'
+  glideOkhttpVersion = '4.9.0'
 
   //ktx
   ktxVersion = '1.0.1'
@@ -65,12 +64,10 @@ ext {
   libraryDependencies =
       [androidxCore             : "androidx.core:core:${androidXVersion}",
        recyclerview             : "androidx.recyclerview:recyclerview:${androidXVersion}",
-       viewpager                : "androidx.viewpager:viewpager:${androidXVersion}",
        material                 : "com.google.android.material:material:${materialVersion}",
-       cardview                 : "androidx.cardview:cardview:${androidXVersion}",
        appcompat                : "androidx.appcompat:appcompat:${androidXVersion}",
        annotations              : "androidx.annotation:annotation:${androidXVersion}",
-       transition               : "androidx.transition:transition:${androidXVersion}",
+       customtabs               : "androidx.browser:browser:${androidSupportVersion}",
        constraintLayout         : "androidx.constraintlayout:constraintlayout:${constraintVersion}",
        design                   : "com.android.support:design:${androidSupportVersion}",
        lifecycleJava8           : "androidx.lifecycle:lifecycle-common-java8:${lifecycleJava8Version}",

@@ -9,6 +9,10 @@ kapt {
   correctErrorTypes = true
 }
 
+androidExtensions {
+  experimental = true
+}
+
 apply from: '../default-config.gradle'
 apply from: '../build-config.gradle'
 
@@ -41,6 +45,10 @@ dependencies {
   implementation libraryDependencies.moxyCore
   implementation libraryDependencies.moxyAndroid
   kapt libraryDependencies.moxyKapt
+
+  implementation libraryDependencies.glide
+  implementation libraryDependencies.glideOkhttp
+  kapt libraryDependencies.glideKapt
 
   testImplementation testDependencies.jUnit
   testImplementation testDependencies.mockito

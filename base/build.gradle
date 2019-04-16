@@ -6,23 +6,26 @@ apply from: '../default-config.gradle'
 apply from: '../build-config.gradle'
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation libraryDependencies.kotlinStdlibJdk8
-    implementation libraryDependencies.appcompat
-    implementation libraryDependencies.moxyCore
-    implementation libraryDependencies.moxyAndroid
-    implementation libraryDependencies.epoxy
+  implementation fileTree(dir: 'libs', include: ['*.jar'])
+  implementation libraryDependencies.kotlinStdlibJdk8
+  implementation libraryDependencies.appcompat
+  implementation libraryDependencies.moxyCore
+  implementation libraryDependencies.moxyAndroid
+  implementation libraryDependencies.epoxy
 
-    implementation libraryDependencies.dagger
-    implementation libraryDependencies.daggerAndroid
-    implementation libraryDependencies.rxJava
-    implementation libraryDependencies.rxAndroid
-    kapt libraryDependencies.daggerCompiler
+  implementation libraryDependencies.ktx
+  implementation libraryDependencies.customtabs
 
-    implementation libraryDependencies.retrofit
-    implementation libraryDependencies.rxJavaAdapter
-    implementation libraryDependencies.gsonConverter
-    implementation libraryDependencies.loggingInterceptor
+  implementation libraryDependencies.dagger
+  implementation libraryDependencies.daggerAndroid
+  implementation libraryDependencies.rxJava
+  implementation libraryDependencies.rxAndroid
+  kapt libraryDependencies.daggerCompiler
 
-    kapt libraryDependencies.moxyKapt
+  implementation libraryDependencies.retrofit
+  implementation libraryDependencies.rxJavaAdapter
+  implementation libraryDependencies.gsonConverter
+  implementation libraryDependencies.loggingInterceptor
+
+  kapt libraryDependencies.moxyKapt
 }

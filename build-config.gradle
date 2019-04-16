@@ -7,11 +7,11 @@ android {
   buildTypes {
     debug {
       buildConfigField("String", "BASE_URL", '"http://jsonplaceholder.typicode.com/"')
-      buildConfigField("String", "AVATAR", '"https://api.adorable.io/avatars/75/"')
+      buildConfigField("String", "AVATAR", '"https://api.adorable.io/avatars/"')
     }
     release {
       buildConfigField("String", "BASE_URL", '"http://jsonplaceholder.typicode.com/"')
-      buildConfigField("String", "AVATAR", '"https://api.adorable.io/avatars/75/"')
+      buildConfigField("String", "AVATAR", '"https://api.adorable.io/avatars/"')
 
       minifyEnabled false
       proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'

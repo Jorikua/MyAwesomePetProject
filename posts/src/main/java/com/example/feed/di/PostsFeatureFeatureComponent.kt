@@ -7,19 +7,19 @@ import dagger.Component
 import java.lang.ref.WeakReference
 
 @PerFeature
-@Component(dependencies = [PostsDependencies::class], modules = [PostsDataModule::class])
+@Component(dependencies = [PostsFeatureDependencies::class], modules = [PostsFeatureModule::class])
 interface PostsFeatureFeatureComponent : PostsFeatureComponentApi {
   
   companion object {
     @Volatile
     private lateinit var postsFeatureComponentWeak: WeakReference<PostsFeatureFeatureComponent>
     
-    fun get(postsDependencies: PostsDependencies): PostsFeatureFeatureComponent {
+    fun get(postsDependencies: PostsFeatureDependencies): PostsFeatureFeatureComponent {
       if (!this::postsFeatureComponentWeak.isInitialized || postsFeatureComponentWeak.get() == null) {
         synchronized(PostsFeatureFeatureComponent::class) {
           if (!this::postsFeatureComponentWeak.isInitialized || postsFeatureComponentWeak.get() == null) {
             val component = DaggerPostsFeatureFeatureComponent.builder()
-                .postsDependencies(postsDependencies)
+                .postsFeatureDependencies(postsDependencies)
                 .build()
             postsFeatureComponentWeak = WeakReference(component)
           }
@@ -32,7 +32,7 @@ interface PostsFeatureFeatureComponent : PostsFeatureComponentApi {
   
   @PerFeature
   @Component(dependencies = [AppComponentApi::class])
-  interface PostsDependenciesComponent : PostsDependencies
+  interface PostsDependenciesComponent : PostsFeatureDependencies
 }
 
 val postsFeatureComponent: PostsFeatureComponentApi

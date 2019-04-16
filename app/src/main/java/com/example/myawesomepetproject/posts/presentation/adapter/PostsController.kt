@@ -21,11 +21,11 @@ class PostsController @Inject constructor() : TypedEpoxyController<List<PostView
     postEpoxyView {
       id(postViewModel.id)
       postViewModel(postViewModel)
-      postClick { postsListener?.onPostClick(postViewModel.id, postViewModel.userId) }
+      postClick { postsListener?.onPostClick(postViewModel) }
     }
   }
   
   interface PostsListener {
-    fun onPostClick(id: Int, userId: Int)
+    fun onPostClick(postViewModel: PostViewModel)
   }
 }

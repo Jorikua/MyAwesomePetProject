@@ -3,4 +3,9 @@
 	<string name="posts">Posts</string>
 	<string name="retry">Retry</string>
 	<string name="something_went_wrong">Something went wrong</string>
+	<string name="details">Details</string>
+	<string name="format_comments">Comments (%d)</string>
+	<string name="format_name">Name: %s</string>
+	<string name="format_username">Username: %s</string>
+	<string name="format_website">Website: %s</string>
 </resources>

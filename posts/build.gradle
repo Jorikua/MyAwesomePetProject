@@ -18,4 +18,5 @@ dependencies {
   kapt libraryDependencies.daggerCompiler
 
   implementation project(':base')
+  implementation project(':user')
 }

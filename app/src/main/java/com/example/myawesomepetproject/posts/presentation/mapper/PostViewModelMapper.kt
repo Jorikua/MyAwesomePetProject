@@ -10,6 +10,8 @@ class PostViewModelMapper @Inject constructor(): com.example.base.mapper.Mapper<
   }
   
   override fun map(from: Post): PostViewModel {
-    return PostViewModel(from.id, from.userId, from.title, from.body)
+    return with(from) {
+      PostViewModel(id, userId, title, body)
+    }
   }
 }

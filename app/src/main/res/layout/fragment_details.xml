@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+		android:background="@color/white"
+		android:layout_height="match_parent"
+		>
+
+	<androidx.appcompat.widget.Toolbar
+			android:layout_width="match_parent"
+			android:background="@color/white"
+			android:elevation="@dimen/elevation_2"
+			app:contentInsetStart="0dp"
+			android:layout_height="?attr/actionBarSize">
+
+		<androidx.appcompat.widget.AppCompatImageView
+				android:id="@+id/detailsIvBack"
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:src="@drawable/ic_back"
+				android:paddingStart="@dimen/padding_16"
+				android:background="?attr/selectableItemBackgroundBorderless"
+				android:paddingEnd="@dimen/padding_16"
+				/>
+
+		<androidx.appcompat.widget.AppCompatTextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/details"
+				android:textColor="@color/black"
+				android:textSize="@dimen/text_size_24"
+				/>
+
+	</androidx.appcompat.widget.Toolbar>
+
+	<com.airbnb.epoxy.EpoxyRecyclerView
+			android:id="@+id/detailsRv"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			/>
+
+</LinearLayout>
