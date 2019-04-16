@@ -47,6 +47,7 @@ ext {
   //Testing
   jUnitVersion = '4.12'
   mockitoVersion = '1.10.19'
+  mockitoKotlinVersion = '2.1.0'
 
   //Glide
   glideVersion = '4.9.0'
@@ -106,5 +107,6 @@ ext {
   // Testing dependencies
   testDependencies =
       [jUnit                    : "junit:junit:${jUnitVersion}",
-       mockito                  : "org.mockito:mockito-core:${mockitoVersion}"]
+       mockito                  : "org.mockito:mockito-core:${mockitoVersion}",
+       mockitoKotlin            : "com.nhaarman.mockitokotlin2:mockito-kotlin:${mockitoKotlinVersion}"]
 }

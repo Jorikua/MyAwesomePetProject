@@ -1,6 +1,5 @@
 package com.example.feed.domain.interactor
 
-import com.example.base.interactor.SingleUseCaseWithoutParams
 import com.example.feed.domain.model.Post
 import com.example.feed.domain.repository.PostsRepository
 import io.reactivex.Single

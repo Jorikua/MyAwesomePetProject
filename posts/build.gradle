@@ -17,6 +17,11 @@ dependencies {
   implementation libraryDependencies.rxAndroid
   kapt libraryDependencies.daggerCompiler
 
+
+  testImplementation testDependencies.jUnit
+  testImplementation testDependencies.mockito
+  testImplementation testDependencies.mockitoKotlin
+
   implementation project(':base')
   implementation project(':user')
 }

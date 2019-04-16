@@ -50,9 +50,6 @@ dependencies {
   implementation libraryDependencies.glideOkhttp
   kapt libraryDependencies.glideKapt
 
-  testImplementation testDependencies.jUnit
-  testImplementation testDependencies.mockito
-
   implementation project(':base')
   implementation project(':posts')
   implementation project(':user')
