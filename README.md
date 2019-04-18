@@ -14,7 +14,8 @@ What was used:
 
 What is to be done:
 
-- Moving all routing to [Cicerone](https://github.com/terrakok/Cicerone)
-- Trying [Toothpick](https://github.com/stephanenicolas/toothpick) for DI
-- Trying Redux(MVI, etc.)
+- Move all routing to [Cicerone](https://github.com/terrakok/Cicerone)
+- Try coroutines
+- Try [Toothpick](https://github.com/stephanenicolas/toothpick) for DI
+- Try Redux(MVI, etc.)
 - Maybe some UI improvements. (just make it nicer)
